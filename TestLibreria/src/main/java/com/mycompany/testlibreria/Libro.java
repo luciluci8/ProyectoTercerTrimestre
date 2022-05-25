@@ -104,5 +104,51 @@ public class Libro {
     }
     
     
-    
+     public boolean esLibroLargo (){
+        int paginas=50;
+        if(numPaginas> paginas){
+            return true;
+            
+        }else{
+            return false;
+        }
+    }
+    public boolean esMasCaro (){
+       
+        for (int i = 0; i < precioBase; i++) {
+            if(precioBase> 5){
+                return true;
+            }
+            
+        }return false;
+    }
+    public boolean prestamo (int presta){
+        if (presta>nEjemplares){
+            return false;
+    }else{
+        nEjemplares-=presta;
+        nEjemplaresPrestados+=presta;
+}
+        return true;
+}
+    public boolean devolucion (int devo){
+        if(devo==0){
+            return false;
+        }else{
+            nEjemplares+=devo;
+            nEjemplaresPrestados-=devo;
+        }
+        return true;
+    }
+
+    public double aplicarDescuento (Libro libro){
+         double descuento= 5.5;
+        
+        while (libro.getNumPaginas() > 100 && libro.getPrecioBase() > 10){
+            
+                 
+
+        }
+       return precioBase-=descuento;
+} 
 }
