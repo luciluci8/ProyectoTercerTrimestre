@@ -14,12 +14,12 @@ public class TestLibreria {
     public static void main(String[] args) {
        
         Libreria libre = new Libreria();
-        Libro libro1 = new Libro(1111111, "La casa de los Espiritus", "Ana Miras", 105, 200, 2);
+        Libro libro1 = new Libro(1111111, "La casa de los Espiritus", "Ana Miras", 30, 10, 2);
         libre.insertaLibro(libro1);
         
-        Libro libro2 = new Libro(2222222, "La gata azul", "Pepe Lopes", 60, 150, 12);
+        Libro libro2 = new Libro(2222222, "La gata azul", "Pepe Lopes", 60, 19, 12);
         libre.insertaLibro(libro2);
-        libro1.setPrecioBase(20);
+        libro1.setPrecioBase(16);
         libro1.setPrecioIva(1.21);
         libro2.setPrecioBase(10);
         libro1.aplicarDescuento(libro1);
