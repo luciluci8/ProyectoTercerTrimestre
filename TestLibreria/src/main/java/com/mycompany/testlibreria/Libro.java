@@ -15,18 +15,18 @@ public class Libro {
     private String autor;
     private int numPaginas;
     private double precioBase;
-    private double precioIva;
+  
     private int nEjemplares;
     private int nEjemplaresPrestados;
     
-    public Libro (int pIsbn, String pTitulo, String pAutor, int pNumPaginas, int nEjemplares, int nEjemplaresPrestados){ 
+    public Libro (int pIsbn, String pTitulo, String pAutor, int pNumPaginas, double pprecioBase, int nEjemplares, int nEjemplaresPrestados){ 
         
        isbn=pIsbn;
        titulo=pTitulo;
        autor=pAutor;
        numPaginas=pNumPaginas;
-       this.setPrecioBase(precioBase);
-       this.setPrecioIva(precioIva);
+       precioBase= pprecioBase;
+      
        this.nEjemplares=nEjemplares;
        this.nEjemplaresPrestados=nEjemplaresPrestados;
          
@@ -41,14 +41,7 @@ public class Libro {
         this.precioBase = precioBase;
     }
 
-    public double getPrecioIva() {
-        return precioIva;
-    }
-
-    public void setPrecioIva(double precioIva) {
-        this.precioIva = precioIva;
-    }
-    
+   
 
     public int getIsbn() {
         return isbn;
@@ -100,7 +93,7 @@ public class Libro {
 
     @Override
     public String toString() {
-        return "Libro{" + "isbn=" + isbn + ", titulo=" + titulo + ", autor=" + autor + ", numPaginas=" + numPaginas + ", precioBase=" + precioBase + ", precioIva=" + precioIva + ", nEjemplares=" + nEjemplares + ", nEjemplaresPrestados=" + nEjemplaresPrestados + '}';
+        return "Libro{" + "isbn=" + isbn + ", titulo=" + titulo + ", autor=" + autor + ", numPaginas=" + numPaginas + ", precioBase=" + precioBase  + ", nEjemplares=" + nEjemplares + ", nEjemplaresPrestados=" + nEjemplaresPrestados + '}';
     }
     
     
@@ -113,21 +106,14 @@ public class Libro {
             return false;
         }
     }
-    public boolean esMasCaro (){
-       
-        for (int i = 0; i < precioBase; i++) {
-            if(precioBase> 5){
-                return true;
-            }
-            
-        }return false;
-    }
-    public boolean prestamo (int presta){
-        if (presta>nEjemplares){
+    
+    public boolean prestamo (int prestados){
+        nEjemplaresPrestados= prestados;
+        if (prestados>nEjemplares){
             return false;
     }else{
-        nEjemplares-=presta;
-        nEjemplaresPrestados+=presta;
+        nEjemplares-=prestados;
+        nEjemplaresPrestados+=prestados;
 }
         return true;
 }
@@ -144,7 +130,7 @@ public class Libro {
     public double aplicarDescuento (Libro libro){
          double descuento= 5.5;
         
-        while (libro.getNumPaginas() > 100 && libro.getPrecioBase() > 10){
+        while (libro.numPaginas > 100 && libro.precioBase > 10){
             
                  
 
