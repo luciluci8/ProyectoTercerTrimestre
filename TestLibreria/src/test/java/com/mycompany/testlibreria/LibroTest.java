@@ -20,21 +20,21 @@ public class LibroTest {
     public LibroTest() {
     }
     
-    @BeforeAll
-    public static void setUpClass() {
-    }
-    
-    @AfterAll
-    public static void tearDownClass() {
-    }
-    
-    @BeforeEach
-    public void setUp() {
-    }
-    
-    @AfterEach
-    public void tearDown() {
-    }
+//    @BeforeAll
+//    public static void setUpClass() {
+//    }
+//    
+//    @AfterAll
+//    public static void tearDownClass() {
+//    }
+//    
+//    @BeforeEach
+//    public void setUp() {
+//    }
+//    
+//    @AfterEach
+//    public void tearDown() {
+//    }
 
    
     
